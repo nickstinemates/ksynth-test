@@ -1,0 +1,49 @@
+{
+	"config-version"    : "1",
+"config-type"       : "kentik-synth-plan",
+"quarterback-api"   : {
+	"kentik-synth-api-url"          : "http://kentik-synth.zubrcom.net/kentik-synth-api",
+	"kentik-synth-control-header"   : "x-kentik-synth-inject",
+	"kentik-synth-control-value"    : "PwiqGloL7",
+	"target-path"                   : "metrics+backup",
+	"agent-step-seconds"            : "15",
+	"agent-dead-after-seconds"      : "60",
+	"concurrent-agents-per-host"    : "6"
+},
+"kentik-synth-agents" : {
+	"kentik-synth-a_icmp-ping" : {
+		"test-ms-at-failure"    : "10000",
+		"set-value-if-failure"  : "0",
+		"default-step-seconds"  : "10",
+		"metric-name"           : "ping_time",
+		"metric-class"          : "gauge"
+	}
+},
+"defined-targets" : {
+	"ping-127.0.0.1" :    {
+		"agent"              : "kentik-synth-a_icmp-ping",
+		"metric-path"        : "ping-127.0.0.1",
+		"host-step-seconds"  : "5",
+		"target-host"        : "127.0.0.1"
+	},
+	"ping-1.1.1.1" :    {
+		"agent"              : "kentik-synth-a_icmp-ping",
+		"metric-path"        : "ping-127.1.1.1",
+		"host-step-seconds"  : "5",
+		"target-host"        : "1.1.1.1"
+	},
+	"ping-8.8.8.8" :    {
+		"agent"              : "kentik-synth-a_icmp-ping",
+		"metric-path"        : "ping-8.8.8.8",
+		"host-step-seconds"  : "5",
+		"target-host"        : "8.8.8.8"
+	}
+},
+"common-targets" : [
+	"ping-127.0.0.1",
+	"ping-1.1.1.1",
+	"ping-8.8.8.8"
+],
+"host-targets" : {
+}
+																																																																																								}
