@@ -38,6 +38,12 @@
 		"host-step-seconds"  : "5",
 		"target-host"        : "157.245.230.241"
 	},
+	"ping-ipv6" :    {
+		"agent"              : "kentik-synth-a_icmp-ping",
+		"metric-path"        : "ping-ipv6",
+		"host-step-seconds"  : "5",
+		"target-host"        : "2001:4860:4860::8888"
+	},
 	"ping-8.8.8.8" :    {
 		"agent"              : "kentik-synth-a_icmp-ping",
 		"metric-path"        : "ping-8.8.8.8",
@@ -48,7 +54,9 @@
 "common-targets" : [
 	"ping-127.0.0.1",
 	"ping-1.1.1.1",
-	"ping-8.8.8.8"
+	"ping-8.8.8.8",
+	"ping-2.2.2.2",
+	"ping-ipv6"
 ],
 "host-targets" : {
 }
